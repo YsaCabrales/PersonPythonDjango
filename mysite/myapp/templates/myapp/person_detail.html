@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'myapp/style.css' %}" />
+    <title>Details of {{ object.first_name }} {{ object.last_name }}</title>
+</head>
+<body>
+    <div class="user-details-container">
+        <h1>{{ object.first_name }} {{ object.last_name }}</h1>
+        <ul>
+            <li>{{ object.nickname }}</li>
+            <li>{{ object.gender }}</li>
+            <li>{{ object.address }}</li>
+            <li>{{ object.favorite_artist }}</li>
+            <li>{{ object.birthday }}</li>
+            <li>{{ object.zodiac_sign }}</li>
+            <li>{{ object.profile_picture }}</li>
+            <li>{{ object.mbti }}</li>
+            <li>{{ object.iq }}</li>
+            <li>{{ object.blood_type }}</li>
+        </ul>
+    </div>
+</body>
+</html>

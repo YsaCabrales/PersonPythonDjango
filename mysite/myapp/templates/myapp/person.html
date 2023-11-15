@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{% static 'myapp/style.css' %}" />
+        <title>Person List</title>
+    </head>
+    <body>
+        <h1>Person List</h1>
+        {% for person in object_list %}
+        <li>
+            <a href="{% url 'person_detail_view' pk=person.id %}"
+                >{{ person.last_name }}, {{ person.first_name }}</a
+            >
+        </li>
+        {% empty %}
+        <li>No people yet.</li>
+        {% endfor %}
+    </body>
+</html>
