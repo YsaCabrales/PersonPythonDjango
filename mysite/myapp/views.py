@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.views.generic import ListView
 from django.views.generic import DetailView
+from django.views.generic.edit import CreateView
 from django.utils import timezone
 from .models import Person
+from .forms import PersonForm
 
 # Create your views here.
 def person_list_view(request):
@@ -12,6 +14,7 @@ def person_list_view(request):
     print(Person.objects.all())
     
     return render(request, "myapp/person.html", context)
+
 
 class PersonListView(ListView):
     model = Person
@@ -23,9 +26,17 @@ class PersonListView(ListView):
         context["now"] = timezone.now
         return context
     
+
 class PersonDetailView(DetailView):
     model = Person
     template_name = "myapp/person_detail.html"
+
+
+class PersonCreateView(CreateView):
+    model = Person
+    form_class = PersonForm
+    template_name = "myapp/person_create.html"
+    success_url = "/"
     
 """
     Views are like controllers

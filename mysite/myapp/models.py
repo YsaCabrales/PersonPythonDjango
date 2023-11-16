@@ -46,7 +46,7 @@ class Person(models.Model):
     favorite_artist = models.CharField(max_length=30, null=True, blank=True)
     birthday = models.DateField(null=True, blank=True)
     zodiac_sign = models.CharField(choices=ZodiacSigns.choices, max_length=5, null=True, blank=True)
-    profile_picture = models.ImageField(upload_to="myapp/images", null=True, blank=True)
+    profile_picture = models.ImageField(upload_to="images/", null=True, blank=True)
     mbti = models.CharField(max_length=4, null=True, blank=True)
     iq = models.SmallIntegerField(default=100)
     blood_type = models.CharField(choices=BloodTypes.choices, max_length=2, default="O")
