@@ -12,7 +12,9 @@
     <div class="user-details-container">
         <h1>{{ object.first_name }} {{ object.last_name }}</h1>
         <ul>
+            {% if object.profile_picture %}
             <li><img src="{{ object.profile_picture.url }}" width="300"/></li>
+            {% endif %}
             <li>{{ object.nickname }}</li>
             <li>{{ object.gender }}</li>
             <li>{{ object.address }}</li>
