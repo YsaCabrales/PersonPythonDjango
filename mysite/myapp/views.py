@@ -1,7 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import ListView
-from django.views.generic import DetailView
-from django.views.generic.edit import CreateView
+from django.views.generic import ListView, DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.utils import timezone
 from .models import Person
 from .forms import PersonForm
@@ -36,6 +35,12 @@ class PersonCreateView(CreateView):
     model = Person
     form_class = PersonForm
     template_name = "myapp/person_create.html"
+    success_url = "/"
+
+class PersonUpdateView(UpdateView):
+    model = Person
+    form_class = PersonForm
+    template_name = "myapp/person_update.html"
     success_url = "/"
     
 """
