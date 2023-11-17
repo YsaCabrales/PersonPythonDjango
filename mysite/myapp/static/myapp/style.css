@@ -6,8 +6,8 @@ h1 {
 body {
     font-family: "Arial", sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f99bc7;
+    padding: 5%;
+    background-color: #ffafd4;
 }
 
 .user-details-container {
@@ -47,4 +47,47 @@ td {
 .desc {
     font-weight: bold;
     text-align: left;
+}
+
+.personList {
+    list-style: none;
+    font-size: 20px; 
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff; 
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 20px;
+}
+
+.updateBtn {
+    background-color: #ff69b4;
+}
+
+.deleteBtn {
+    background-color: #be1818;
+}
+
+.updateBtn:hover {
+    background-color: #d74682; 
+}
+
+.deleteBtn:hover {
+    background-color: #7b1010; 
+}
+
+li {
+    margin-top: 30px;
+}
+
+.person {
+    padding: 10px;
+    border: 2px solid white;
 }

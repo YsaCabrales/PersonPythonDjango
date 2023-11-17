@@ -55,6 +55,9 @@
                 <td>{{ object.blood_type }}</td>
             </tr>
         </table>
+
+        <a href="{% url 'person_update_view' pk=object.id %}" class="button updateBtn">Update Details</a>
+        <a href="{% url 'person_delete_view' pk=object.id %}" class="button deleteBtn">Delete Person</a>
     </div>
 </body>
 </html>
