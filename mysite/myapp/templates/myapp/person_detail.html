@@ -11,21 +11,50 @@
 <body>
     <div class="user-details-container">
         <h1>{{ object.first_name }} {{ object.last_name }}</h1>
-        <ul>
+
             {% if object.profile_picture %}
-            <li><img src="{{ object.profile_picture.url }}" width="300"/></li>
+            <div class="user-avatar">
+                <img src="{{ object.profile_picture.url }}" />
+            </div>
             {% endif %}
-            <li>{{ object.nickname }}</li>
-            <li>{{ object.gender }}</li>
-            <li>{{ object.address }}</li>
-            <li>{{ object.favorite_artist }}</li>
-            <li>{{ object.birthday }}</li>
-            <li>{{ object.zodiac_sign }}</li>
-            <li>{{ object.profile_picture }}</li>
-            <li>{{ object.mbti }}</li>
-            <li>{{ object.iq }}</li>
-            <li>{{ object.blood_type }}</li>
-        </ul>
+        <table class="user-details">
+            <tr>
+                <td class="desc">Nickname</td>
+                <td>{{ object.nickname }}</td>
+            </tr>
+            <tr>
+                <td class="desc">Gender</td>
+                <td>{{ object.gender }}</td>
+            </tr>
+            <tr>
+                <td class="desc">Address</td>
+                <td>{{ object.address }}</td>
+            </tr>
+            <tr>
+                <td class="desc">Favorite Artist</td>
+                <td>{{ object.favorite_artist }}</td>
+            </tr>
+            <tr>
+                <td class="desc">Birth date</td>
+                <td>{{ object.birthday }}</td>
+            </tr>
+            <tr>
+                <td class="desc">Zodiac Sign</td>
+                <td>{{ object.zodiac_sign }}</td>
+            </tr>
+            <tr>
+                <td class="desc">MBTI</td>
+                <td>{{ object.mbti }}</td>
+            </tr>
+            <tr>
+                <td class="desc">IQ</td>
+                <td>{{ object.iq }}</td>
+            </tr>
+            <tr>
+                <td class="desc">Blood Type</td>
+                <td>{{ object.blood_type }}</td>
+            </tr>
+        </table>
     </div>
 </body>
 </html>
